@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nnsk.luckypoem.workers.dev/sitemap.xml

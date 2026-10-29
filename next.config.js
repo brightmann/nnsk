@@ -1,6 +1,8 @@
 export default {
+  output: 'export',
   staticPageGenerationTimeout: 300,
   images: {
+    unoptimized: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'www.notion.so' },
       { protocol: 'https', hostname: 'notion.so' },
