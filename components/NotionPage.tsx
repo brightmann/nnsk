@@ -193,8 +193,11 @@ const notionRendererComponents: Partial<NotionComponents> = {
 export function NotionPage({
   site,
   recordMap,
-  pageId
-}: Required<Pick<types.PageProps, 'site' | 'recordMap' | 'pageId'>>) {
+  pageId,
+  pager
+}: Required<Pick<types.PageProps, 'site' | 'recordMap' | 'pageId'>> & {
+  pager?: React.ReactNode
+}) {
   const lite = useSearchParam('lite')
 
   // lite mode is for oembed
@@ -269,7 +272,16 @@ export function NotionPage({
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : undefined}
         pageAside={pageAside}
-        footer={<Footer />}
+        footer={
+          pager ? (
+            <>
+              {pager}
+              <Footer />
+            </>
+          ) : (
+            <Footer />
+          )
+        }
       />
 
       <GitHubShareButton />

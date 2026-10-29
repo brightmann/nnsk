@@ -1,6 +1,7 @@
 import 'server-only'
 
 import { notFound } from 'next/navigation'
+import type { ReactNode } from 'react'
 
 import type { PageProps } from '@/lib/types'
 import { author } from '@/lib/config'
@@ -8,7 +9,13 @@ import { getPageMetadataInfo } from '@/lib/page-metadata'
 
 import { NotionPage } from './NotionPage'
 
-export function NotionPageRoute({ pageProps }: { pageProps: PageProps }) {
+export function NotionPageRoute({
+  pageProps,
+  pager
+}: {
+  pageProps: PageProps
+  pager?: ReactNode
+}) {
   const { error, pageId, recordMap, site } = pageProps
 
   if (error || !pageId || !recordMap || !site) {
@@ -44,7 +51,12 @@ export function NotionPageRoute({ pageProps }: { pageProps: PageProps }) {
         />
       )}
 
-      <NotionPage pageId={pageId} recordMap={recordMap} site={site} />
+      <NotionPage
+        pageId={pageId}
+        recordMap={recordMap}
+        site={site}
+        pager={pager}
+      />
     </>
   )
 }
