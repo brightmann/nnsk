@@ -12,6 +12,17 @@ export async function resolveNotionPage(
   domain: string,
   rawPageId?: string
 ): Promise<PageProps> {
+  // Non-ASCII slugs arrive URL-encoded at render time (e.g. %E5%BF%A0%E5%91%8A
+  // for 忠告) while the page map is keyed by decoded titles; decode first so
+  // the lookup hits.
+  if (rawPageId) {
+    try {
+      rawPageId = decodeURIComponent(rawPageId)
+    } catch {
+      // keep the original on malformed input
+    }
+  }
+
   let pageId: string | undefined
   let recordMap: ExtendedRecordMap
 

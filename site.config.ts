@@ -4,10 +4,9 @@ export default siteConfig({
   // the site's root Notion page (required)
   rootNotionPageId: '05d63c580eea823ab11001a1393337ed',
 
-pageUrlOverrides: {
-'/advice': '40863c580eea80d08f64e2538ae4351f',
-'/test': '40863c580eea809daf4ed90eca33f531'
-},
+  pageUrlOverrides: {
+    '/advice': '40863c580eea80d08f64e2538ae4351f'
+  },
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
@@ -71,4 +70,3 @@ pageUrlOverrides: {
   //   }
   // ]
 })
-
