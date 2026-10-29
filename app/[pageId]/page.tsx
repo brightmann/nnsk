@@ -5,6 +5,7 @@ import { getPageData } from '@/lib/get-page-data'
 import { getSiteMap } from '@/lib/get-site-map'
 import { isDev, pageUrlOverrides } from '@/lib/config'
 import { createPageMetadata } from '@/lib/page-metadata'
+import { stripPageCovers } from '@/lib/strip-covers'
 
 interface DynamicPageProps {
   params: Promise<{
@@ -43,5 +44,14 @@ export default async function DynamicPage({ params }: DynamicPageProps) {
   const { pageId } = await params
   const pageProps = await getPageData(pageId)
 
-  return <NotionPageRoute pageProps={pageProps} />
+  return (
+    <NotionPageRoute
+      pageProps={{
+        ...pageProps,
+        recordMap: pageProps.recordMap
+          ? stripPageCovers(pageProps.recordMap)
+          : pageProps.recordMap
+      }}
+    />
+  )
 }

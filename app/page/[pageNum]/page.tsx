@@ -6,6 +6,7 @@ import { BlogPager } from '@/components/BlogPager'
 import { getPageData } from '@/lib/get-page-data'
 import { createPageMetadata } from '@/lib/page-metadata'
 import { getBlogPageCount, sliceRecordMapForPage } from '@/lib/blog-pagination'
+import { stripPageCovers } from '@/lib/strip-covers'
 
 export const revalidate = 10
 export const dynamicParams = false
@@ -41,7 +42,9 @@ export default async function BlogPage({
     notFound()
   }
 
-  const sliced = sliceRecordMapForPage(pageProps.recordMap, page)
+  const sliced = stripPageCovers(
+    sliceRecordMapForPage(pageProps.recordMap, page)
+  )
 
   return (
     <NotionPageRoute

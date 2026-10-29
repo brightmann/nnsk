@@ -59,3 +59,9 @@ body {
 ::-webkit-scrollbar-track {
   background-color: var(--bg-color);
 }
+
+/* Covers are stripped from the data (see lib/strip-covers.ts); the gallery
+   card still renders its (now empty) 190px cover container, so hide it. */
+.notion-collection-card .notion-collection-card-cover {
+  display: none;
+}
