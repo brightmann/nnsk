@@ -7,7 +7,8 @@ export default siteConfig({
   pageUrlOverrides: {
     '/advice': '40863c580eea80d08f64e2538ae4351f',
     '/song-sound': '40863c580eea8003b0f2d444e0e82fcc',
-    '/fh': '40863c580eea80ee9c14fa426b634988'
+    '/fh': '40863c580eea80ee9c14fa426b634988',
+    '/journey': '40863c580eea8035ba7aff8513877e00'
   },
 
   // if you want to restrict pages to a single notion workspace (optional)
