@@ -5,7 +5,8 @@ export default siteConfig({
   rootNotionPageId: '05d63c580eea823ab11001a1393337ed',
 
   pageUrlOverrides: {
-    '/advice': '40863c580eea80d08f64e2538ae4351f'
+    '/advice': '40863c580eea80d08f64e2538ae4351f',
+    '/song-sound': '40863c580eea8003b0f2d444e0e82fcc'
   },
 
   // if you want to restrict pages to a single notion workspace (optional)
