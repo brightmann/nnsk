@@ -10,7 +10,8 @@ export default siteConfig({
     '/fh': '40863c580eea80ee9c14fa426b634988',
     '/journey': '40863c580eea8035ba7aff8513877e00',
     '/cultivation': '40863c580eea808c9039e6a78c8782c4',
-    '/old-melodies': '40863c580eea80f1a3c3f75f6dd9340b'
+    '/old-melodies': '40863c580eea80f1a3c3f75f6dd9340b',
+    '/nutrition': '40863c580eea80b18aafda06b079a2c7'
   },
 
   // if you want to restrict pages to a single notion workspace (optional)
